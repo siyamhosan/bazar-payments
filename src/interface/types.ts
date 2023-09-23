@@ -45,4 +45,5 @@ export type ResponseWalletCreate =
 export type PayWalletConfig = {
   walletId: string
   key: string
+  testing?: boolean
 }

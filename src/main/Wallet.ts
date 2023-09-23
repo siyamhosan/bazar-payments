@@ -1,15 +1,17 @@
-import { BaseUrl } from '../interface/base'
 import { PayWalletConfig } from '../interface/types'
 import { get } from '../utils/request'
 
 export class PayWallet {
   private key: string
   public walletId: string
-  private baseUrl = BaseUrl
+  private baseUrl = 'https://api.bazarexchange.ltd'
 
   constructor (config: PayWalletConfig) {
     this.key = config.key
     this.walletId = config.walletId
+    if (config.testing) {
+      this.baseUrl = 'http://localhost:8080'
+    }
   }
 
   async getBalance () {

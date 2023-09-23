@@ -9,10 +9,13 @@ import { get, post } from '../utils/request'
 
 export class BazarPayClient {
   private key: string
-  private baseUrl = 'http://localhost:8080'
+  private baseUrl = 'https://api.bazarexchange.ltd'
 
-  constructor (key: string) {
+  constructor (key: string, { testing }: { testing?: boolean } = {}) {
     this.key = key
+    if (testing) {
+      this.baseUrl = 'http://localhost:8080'
+    }
   }
 
   async createPayment (options: CreatePayment): Promise<ResponsePaymentCreate> {

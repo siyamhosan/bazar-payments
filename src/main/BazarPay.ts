@@ -29,8 +29,6 @@ export class BazarPayClient {
     url.searchParams.append('callbackUrl', options.callbackUrl)
     url.searchParams.append('walletId', options.walletId || '')
 
-    console.log(url.toString())
-
     const response = await post(url.toString(), {}, headers)
     return response as ResponsePaymentCreate
   }

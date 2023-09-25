@@ -1,5 +1,11 @@
 # bazar-payments
 
+## 0.0.5
+
+### Patch Changes
+
+- 1f14cc9: Logs Removed
+
 ## 0.0.4
 
 ### Patch Changes
